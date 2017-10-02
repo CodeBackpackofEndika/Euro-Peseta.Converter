@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Conversor</title>
+    <link href="css/estilos.css" rel="stylesheet" type="text/css">
+
+
+</head>
+<body>
+<main>
+    <h1>
+        CONVERSOR
+    </h1>
+
+    <form action="http://DESI-PR01.salesianos.local/conversor/eurospesetas.php" method="get">
+        <label for="precioeneuros">Precio en euros</label><br>
+        <input type="number" id="precioeneuros" name="euros" min="0" value="1"/> &euro;
+        <br>
+        <button id="btEnviar" type="submit">Enviar</button>
+
+        <div id="resultado">
+
+        </div>
+    </form>
+
+
+
+</main>
+
+
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script>
+        $(function () {
+
+            $("#btEnviar").on("click",function (e) {
+                e.preventDefault();
+                $("#resultado").html("<p>"+
+                    ($("#precioeneuros").val()*166.386)+"Pts</p>");
+
+            });
+
+
+        })
+    </script>
+
+
+</body>
+</html>
